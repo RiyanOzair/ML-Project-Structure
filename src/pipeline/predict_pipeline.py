@@ -3,18 +3,23 @@ import sys
 from src.exception import CustomException
 from src.logger import logging
 import pandas as pd
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
+
+model_path = os.getenv("MODEL_PATH", "artifacts/model.pkl")
+preprocessor_path = os.getenv("PREPROCESSOR_PATH", "artifacts/preprocessor.pkl")
 
 class PredictPipeline:
     def __init__(self):
-        pass
+        self.model = load_object(model_path)
+        self.preprocessor = load_object(preprocessor_path)
 
     def predict(self, features):
         try:
-            model = load_object('artifacts/model.pkl')
-            preprocessor = load_object('artifacts/preprocessor.pkl')
-            data_scaled = preprocessor.transform(features)
-            pred = model.predict(data_scaled)
+            data_scaled = self.preprocessor.transform(features)
+            pred = self.model.predict(data_scaled)
             return pred
 
         except Exception as e:
