@@ -1,5 +1,5 @@
 # Student Performance Predictor - https://student-performance-predictor-ml-end2end.onrender.com
-
+https://student-performance-predictor.up.railway.app
 ## Project Overview
 
 This repository contains a machine learning application that predicts student performance based on demographic and academic factors. The project demonstrates how data-driven insights can be used to understand and forecast student outcomes, providing a practical example of end-to-end machine learning deployment.
