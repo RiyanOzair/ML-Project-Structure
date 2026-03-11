@@ -1,6 +1,6 @@
 import requests
 
-url = "http://localhost:5000/predict_api"
+url = "https://student-performance-predictor.up.railway.app/predict_api"
 
 data = {
  "gender": "male",
